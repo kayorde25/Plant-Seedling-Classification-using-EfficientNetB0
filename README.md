@@ -26,6 +26,15 @@ The objective of this project is to:
 * Improve interpretability using explainable AI techniques
 
 ---
+## Why This Matters
+
+Accurate classification of plant seedlings has practical applications in precision agriculture, including early weed detection, crop monitoring, and automated decision-making systems.
+
+In real-world agricultural settings, early-stage plants often appear visually similar, making manual identification difficult and error-prone. A reliable image classification model can help reduce labor costs, improve crop management efficiency, and support scalable agricultural technologies.
+
+This project demonstrates how modern deep learning techniques, particularly transfer learning with EfficientNet, can be applied to solve practical computer vision problems with strong performance and efficiency.
+
+---
 
 ## Dataset
 
