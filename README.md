@@ -6,77 +6,68 @@ Deep learning image classification project using EfficientNetB0, transfer learni
 
 ## Overview
 
-This project develops a high-performance multi-class image classification model using **EfficientNetB0** and transfer learning to classify plant seedlings into 12 species.
+This project develops a multi-class image classification model using **EfficientNetB0** and transfer learning to classify plant seedlings into 12 species.
 
-The pipeline is fully reproducible and includes:
+The workflow includes:
 
-- Automated dataset loading from Kaggle  
-- Transfer learning + controlled fine-tuning  
-- Robust evaluation (classification report, confusion matrix)  
-- Model explainability using Grad-CAM  
+- Loading dataset files from a Kaggle-mounted input directory
+- Label encoding and stratified train/validation/test split
+- Transfer learning with EfficientNetB0
+- Controlled fine-tuning
+- Evaluation with classification report and confusion matrix
+- Explainability using Grad-CAM
 
 ---
 
 ## Problem Statement
 
-Manual identification of plant seedlings is:
-
-- time-consuming  
-- error-prone  
-- difficult at early growth stages  
+Manual identification of plant seedlings is time-consuming and error-prone, especially in early growth stages where visual differences between species are subtle.
 
 This project aims to:
 
-- Build a robust multi-class classification model  
-- Leverage pretrained deep learning models  
-- Improve prediction interpretability  
-- Demonstrate real-world applicability in agriculture  
+- Build a robust multi-class classification model
+- Leverage pretrained deep learning architectures
+- Evaluate performance across multiple plant species
+- Improve interpretability using explainable AI techniques
 
 ---
 
 ## Why This Matters
 
-Accurate plant classification supports:
+Accurate plant seedling classification has practical applications in:
 
-- Precision agriculture  
-- Early weed detection  
-- Crop monitoring systems  
-- Automated farming workflows  
+- precision agriculture
+- early weed detection
+- crop monitoring
+- automated agricultural workflows
 
-This project shows how deep learning can reduce manual effort and improve scalability in agricultural systems.
+A reliable image classification model can reduce manual inspection effort, improve crop management efficiency, and support scalable agricultural technologies.
 
 ---
 
 ## Dataset
 
-- **Source:** Kaggle  
-- **Dataset:** https://www.kaggle.com/datasets/abiolaoolaleye/computer-vision  
-- **Samples:** 4,750 images  
-- **Classes:** 12 plant species  
-- **Original Size:** 128×128×3 → resized to 224×224  
+- **Source:** Kaggle
+- **Dataset:** `abiolaoolaleye/computer-vision`
+- **Link:** https://www.kaggle.com/datasets/abiolaoolaleye/computer-vision
+- **Samples:** 4,750 images
+- **Classes:** 12 plant species
+- **Original Image Size:** 128 × 128 × 3
+- **Model Input Size:** 224 × 224 × 3
 
-Files:
+Dataset files:
 
-- `images.npy` → image data  
-- `Labels.csv` → class labels  
-
----
-
-## ⚙️ Reproducibility (IMPORTANT)
-
-This project is fully reproducible.
-
-### Step 1 — Get Kaggle API Key
-
-1. Go to: https://www.kaggle.com/account  
-2. Scroll to **API**  
-3. Click **Create New API Token**  
+- `images.npy` — image array
+- `Labels.csv` — class labels
 
 ---
 
-### Step 2 — Set environment variables
+## Dataset Access
 
-#### Mac / Linux
-```bash
-export KAGGLE_USERNAME=your_username
-export KAGGLE_KEY=your_api_key
+This project is designed to run inside a **Kaggle Notebook** or another environment where the dataset is already available locally.
+
+The code detects the execution environment automatically:
+
+- In **Kaggle**, it loads from:
+  ```python
+  /kaggle/input/computer-vision
